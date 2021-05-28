@@ -1,32 +1,35 @@
 #include <iostream>
 
 #include <string>
-#include "WebCrawler.cpp"
+#include "WebCrawler.h"
 
 // using namespace std;
 
 int main(int argc, char const *argv[]) {
-
   if (argc != 7) {
 		std::cout << "Cantidad incorrecta de parametros" << std::endl;
 		return 0;
 	}
 
-  std::string targets (argv[1]);
-  std::string allowed (argv[2]);
+  std::string targets(argv[1]);
+  std::string allowed(argv[2]);
   int cant_threads = std::stoi(argv[3]);
-  std::string index (argv[4]);
-  std::string pages (argv[5]);
+  std::string index(argv[4]);
+  std::string pages(argv[5]);
   int wait_time = std::stoi(argv[6]);
 
-  //ESTADOS --> ready: la URL fue encontrada pero aún la página web no fue leída ni analizada.
-  //        --> explored: la página web direccionada por la URL fue leída y procesada.
-  //        --> dead: la URL apunta a una página web inexistente (no encontrada).
+  //ESTADOS --> ready: la URL fue encontrada pero
+  //            aún la página web no fue leída ni analizada.
+  //        --> explored: la página web direccionada
+  //            por la URL fue leída y procesada.
+  //        --> dead: la URL apunta a una página
+  //            web inexistente (no encontrada).
 
 
   // Index idx(index);
 
-  WebCrawler web_crawler(targets, index, allowed, pages, cant_threads, wait_time);
+  WebCrawler web_crawler(index, targets, allowed, pages,
+                        cant_threads, wait_time);
 
   web_crawler.ejecutar();
   /******************************************************************/
