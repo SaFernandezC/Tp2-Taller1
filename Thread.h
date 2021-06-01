@@ -7,7 +7,6 @@ class Thread {
   private:
     std::thread thread;
 
-
   public:
     Thread();
 
@@ -18,14 +17,14 @@ class Thread {
     virtual void run() = 0;   //Virtual puro para
                           //forzar que lo defina cada clase hija
 
-    virtual ~Thread(){};
-
-    Thread(const Thread&) = delete; // Fuerzo a que no se puedan copiar hilos
-    Thread& operator=(const Thread&) = delete;
+    virtual ~Thread();
 
     Thread(Thread&& other);
-
     Thread& operator=(Thread&& other);
+
+  private:
+    Thread(const Thread&) = delete;
+    Thread& operator=(const Thread&) = delete;
 };
 
 #endif

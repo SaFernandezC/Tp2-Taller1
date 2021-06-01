@@ -1,13 +1,6 @@
-
-// #include "WebThread.cpp" //Incluye al monitor
 #include "WebCrawler.h"
-
-
-// #include <string>
-//
-// #include <queue>
-// #include <vector>
-#include <chrono>         // std::chrono::second
+#include <string>
+#include <chrono> // std::chrono::second
 
 
 WebCrawler::WebCrawler(const std::string& idx, const std::string& target,
@@ -23,7 +16,6 @@ WebCrawler::WebCrawler(const std::string& idx, const std::string& target,
 
 
 void WebCrawler::ejecutar(){
-  // std::cout << sleep_time << std::endl;
   for (int i = 0; i < cant_threads; i++) {
     web_threads[i]->start();
   }
@@ -36,7 +28,6 @@ void WebCrawler::ejecutar(){
   }
 
   states.print_urls();
-  // std::cout << "FIN" << std::endl;
 }
 
 

@@ -1,30 +1,41 @@
-// #include <iostream>
-// #include <fstream>
-// #include <string>
+#include <string>
 #include "PageAnalizer.h"
 
+#define ERROR -1
+#define INIT_CHARS "http://"
+#define INIT_CHARS_SIZE 8
+#define BEGIN 0
 
-PageAnalizer::PageAnalizer(const std::string& file_name, const std::string& allowed,
-  MonitorCola& url_to_procces):allowed_dom(allowed),
-  targets_queue(url_to_procces){
+PageAnalizer::PageAnalizer(const std::string& file_name,
+  const std::string& allowed):allowed_dom(allowed){
     pages_file.open(file_name, std::ifstream::in);
     if (pages_file.fail()) {
       return; //TRATAR EXCEPCION
     }
   }
 
-void PageAnalizer::analize(int offset, int size){
+void PageAnalizer::analize(MonitorCola& targets_queue, int offset, int size){
   pages_file.seekg(offset, pages_file.beg);
   std::string word;
-  while (pages_file.tellg() != -1 && pages_file.tellg() < offset + size) {
+  while (pages_file.tellg() != ERROR && pages_file.tellg() < offset + size) {
     pages_file >> word;
-    if (word.find("http://") == 0 &&
+    if (word.find(INIT_CHARS) == BEGIN &&
     word.find(allowed_dom + "/") !=  std::string::npos  &&
-    word.find(allowed_dom + "/") < word.find("/", 8)){
+    word.find(allowed_dom + "/") < word.find("/", INIT_CHARS_SIZE)){
       targets_queue.push(word);
-      // std::cout << word << std::endl;
     }
   }
+}
+
+PageAnalizer::PageAnalizer(PageAnalizer&& other){
+  this->pages_file = std::move(other.pages_file);
+  this->allowed_dom = std::move(other.allowed_dom);
+}
+
+PageAnalizer::PageAnalizer& operator=(PageAnalizer&& other){
+  this->pages_file = std::move(other.pages_file);
+  this->allowed_dom = std::move(other.allowed_dom);
+  return *this;
 }
 
 PageAnalizer::~PageAnalizer(){

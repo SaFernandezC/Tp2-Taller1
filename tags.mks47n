@@ -1,0 +1,145 @@
+Thread	Thread.cpp	/^Thread::Thread(){}$/;"	f	class:Thread
+start	Thread.cpp	/^void Thread::start(){$/;"	f	class:Thread
+join	Thread.cpp	/^void Thread::join(){$/;"	f	class:Thread
+~Thread	Thread.cpp	/^Thread::~Thread(){}$/;"	f	class:Thread
+Thread	Thread.cpp	/^Thread::Thread(Thread&& other){$/;"	f	class:Thread
+operator =	Thread.cpp	/^Thread& Thread::operator=(Thread&& other){$/;"	f	class:Thread
+VECTOR_SIZE	Index.cpp	6;"	d	file:
+Index	Index.cpp	/^Index::Index(const std::string& file_name){$/;"	f	class:Index
+get_values	Index.cpp	/^int Index::get_values(std::string url, int& offset, int& size) const{$/;"	f	class:Index
+~Index	Index.cpp	/^Index::~Index(){}$/;"	f	class:Index
+ERROR	PageAnalizer.cpp	4;"	d	file:
+INIT_CHARS	PageAnalizer.cpp	5;"	d	file:
+INIT_CHARS_SIZE	PageAnalizer.cpp	6;"	d	file:
+BEGIN	PageAnalizer.cpp	7;"	d	file:
+PageAnalizer	PageAnalizer.cpp	/^PageAnalizer::PageAnalizer(const std::string& file_name,$/;"	f	class:PageAnalizer
+analize	PageAnalizer.cpp	/^void PageAnalizer::analize(MonitorCola& targets_queue, int offset, int size){$/;"	f	class:PageAnalizer
+~PageAnalizer	PageAnalizer.cpp	/^PageAnalizer::~PageAnalizer(){$/;"	f	class:PageAnalizer
+_INDEX_H	Index.h	2;"	d
+NOT_VALID	Index.h	9;"	d
+VALID	Index.h	10;"	d
+Index	Index.h	/^class Index{$/;"	c
+index	Index.h	/^    std::map <std::string, std::vector<int>> index;$/;"	m	class:Index
+Index	Index.h	/^    explicit Index(const std::string& file_name);$/;"	p	class:Index
+get_values	Index.h	/^    int get_values(std::string url, int& offset, int& size) const;$/;"	p	class:Index
+~Index	Index.h	/^    ~Index();$/;"	p	class:Index
+Index	Index.h	/^    Index(const Index&) = delete;$/;"	p	class:Index
+operator =	Index.h	/^    Index& operator=(const Index&) = delete;$/;"	p	class:Index
+EXPLORED	WebThread.cpp	4;"	d	file:
+DEAD	WebThread.cpp	5;"	d	file:
+WebThread	WebThread.cpp	/^WebThread::WebThread(MonitorCola& url_to_procces, Index& idx,$/;"	f	class:WebThread
+run	WebThread.cpp	/^void WebThread::run(){$/;"	f	class:WebThread
+~WebThread	WebThread.cpp	/^WebThread::~WebThread(){}$/;"	f	class:WebThread
+MonitorCola	MonitorCola.cpp	/^MonitorCola::MonitorCola(const std::string& file_name): closed(false){$/;"	f	class:MonitorCola
+pop	MonitorCola.cpp	/^std::string MonitorCola::pop() {$/;"	f	class:MonitorCola
+push	MonitorCola.cpp	/^void MonitorCola::push(const std::string& url){$/;"	f	class:MonitorCola
+empty	MonitorCola.cpp	/^bool MonitorCola::empty(){$/;"	f	class:MonitorCola
+is_closed	MonitorCola.cpp	/^bool MonitorCola::is_closed(){$/;"	f	class:MonitorCola
+close	MonitorCola.cpp	/^void MonitorCola::close(){$/;"	f	class:MonitorCola
+UrlStates	UrlStates.cpp	/^UrlStates::UrlStates(){}$/;"	f	class:UrlStates
+push	UrlStates.cpp	/^void UrlStates::push(const std::string& url, const std::string& state){$/;"	f	class:UrlStates
+print_urls	UrlStates.cpp	/^void UrlStates::print_urls(){$/;"	f	class:UrlStates
+~UrlStates	UrlStates.cpp	/^UrlStates::~UrlStates(){}$/;"	f	class:UrlStates
+_MONITOR_COLA_H	MonitorCola.h	2;"	d
+MonitorCola	MonitorCola.h	/^class MonitorCola{$/;"	c
+mtx	MonitorCola.h	/^    std::mutex mtx;$/;"	m	class:MonitorCola
+targets_queue	MonitorCola.h	/^    std::queue<std::string> targets_queue;$/;"	m	class:MonitorCola
+is_empty	MonitorCola.h	/^    std::condition_variable is_empty;$/;"	m	class:MonitorCola
+closed	MonitorCola.h	/^    bool closed;$/;"	m	class:MonitorCola
+MonitorCola	MonitorCola.h	/^    explicit MonitorCola(const std::string& file_name);$/;"	p	class:MonitorCola
+push	MonitorCola.h	/^    void push(const std::string& url);$/;"	p	class:MonitorCola
+pop	MonitorCola.h	/^    std::string pop();$/;"	p	class:MonitorCola
+empty	MonitorCola.h	/^    bool empty();$/;"	p	class:MonitorCola
+is_closed	MonitorCola.h	/^    bool is_closed();$/;"	p	class:MonitorCola
+close	MonitorCola.h	/^    void close();$/;"	p	class:MonitorCola
+MonitorCola	MonitorCola.h	/^    MonitorCola(const MonitorCola&) = delete;$/;"	p	class:MonitorCola
+operator =	MonitorCola.h	/^    MonitorCola& operator=(const MonitorCola&) = delete;$/;"	p	class:MonitorCola
+_PAGE_ANALIZER_H	PageAnalizer.h	2;"	d
+PageAnalizer	PageAnalizer.h	/^class PageAnalizer{$/;"	c
+pages_file	PageAnalizer.h	/^    std::ifstream pages_file;$/;"	m	class:PageAnalizer
+allowed_dom	PageAnalizer.h	/^    std::string allowed_dom;$/;"	m	class:PageAnalizer
+PageAnalizer	PageAnalizer.h	/^    PageAnalizer(const std::string& file_name, const std::string& allowed);$/;"	p	class:PageAnalizer
+analize	PageAnalizer.h	/^    void analize(MonitorCola& targets_queue, int offset, int size);$/;"	p	class:PageAnalizer
+~PageAnalizer	PageAnalizer.h	/^    ~PageAnalizer();$/;"	p	class:PageAnalizer
+PageAnalizer	PageAnalizer.h	/^    PageAnalizer(const PageAnalizer&) = delete;$/;"	p	class:PageAnalizer
+operator =	PageAnalizer.h	/^    PageAnalizer& operator=(const PageAnalizer&) = delete;$/;"	p	class:PageAnalizer
+_THREAD_H	Thread.h	2;"	d
+Thread	Thread.h	/^class Thread {$/;"	c
+thread	Thread.h	/^    std::thread thread;$/;"	m	class:Thread
+Thread	Thread.h	/^    Thread();$/;"	p	class:Thread
+start	Thread.h	/^    void start();$/;"	p	class:Thread
+join	Thread.h	/^    void join();$/;"	p	class:Thread
+run	Thread.h	/^    virtual void run() = 0;   \/\/Virtual puro para$/;"	p	class:Thread
+~Thread	Thread.h	/^    virtual ~Thread();$/;"	p	class:Thread
+Thread	Thread.h	/^    Thread(Thread&& other);$/;"	p	class:Thread
+operator =	Thread.h	/^    Thread& operator=(Thread&& other);$/;"	p	class:Thread
+Thread	Thread.h	/^    Thread(const Thread&) = delete;$/;"	p	class:Thread
+operator =	Thread.h	/^    Thread& operator=(const Thread&) = delete;$/;"	p	class:Thread
+_URL_STATES_H	UrlStates.h	2;"	d
+UrlStates	UrlStates.h	/^class UrlStates{$/;"	c
+mtx	UrlStates.h	/^    std::mutex mtx;$/;"	m	class:UrlStates
+states	UrlStates.h	/^    std::map<std::string, std::string> states;$/;"	m	class:UrlStates
+UrlStates	UrlStates.h	/^    UrlStates();$/;"	p	class:UrlStates
+push	UrlStates.h	/^    void push(const std::string& url, const std::string& state);$/;"	p	class:UrlStates
+print_urls	UrlStates.h	/^    void print_urls();$/;"	p	class:UrlStates
+~UrlStates	UrlStates.h	/^    ~UrlStates();$/;"	p	class:UrlStates
+other	UrlStates.h	/^    UrlStates(const UrlStates &other) = delete;$/;"	m	class:UrlStates
+other	UrlStates.h	/^    UrlStates& operator=(const UrlStates &other) = delete;$/;"	m	class:UrlStates
+_WEB_CRAWLER_H	WebCrawler.h	2;"	d
+WebCrawler	WebCrawler.h	/^class WebCrawler{$/;"	c
+index	WebCrawler.h	/^    Index index;$/;"	m	class:WebCrawler
+url_to_procces	WebCrawler.h	/^    MonitorCola url_to_procces;$/;"	m	class:WebCrawler
+cant_threads	WebCrawler.h	/^    int cant_threads;$/;"	m	class:WebCrawler
+sleep_time	WebCrawler.h	/^    int sleep_time;$/;"	m	class:WebCrawler
+allowed_domain	WebCrawler.h	/^    std::string allowed_domain;$/;"	m	class:WebCrawler
+web_threads	WebCrawler.h	/^    std::vector<WebThread*> web_threads;$/;"	m	class:WebCrawler
+states	WebCrawler.h	/^    UrlStates states;$/;"	m	class:WebCrawler
+WebCrawler	WebCrawler.h	/^    WebCrawler(const std::string& idx, const std::string& target,$/;"	p	class:WebCrawler
+ejecutar	WebCrawler.h	/^    void ejecutar();$/;"	p	class:WebCrawler
+~WebCrawler	WebCrawler.h	/^    ~WebCrawler();$/;"	p	class:WebCrawler
+WebCrawler	WebCrawler.h	/^    WebCrawler(const WebCrawler&) = delete;$/;"	p	class:WebCrawler
+operator =	WebCrawler.h	/^    WebCrawler& operator=(const WebCrawler&) = delete;$/;"	p	class:WebCrawler
+_WEB_THREAD_H	WebThread.h	2;"	d
+WebThread	WebThread.h	/^class WebThread: public Thread{$/;"	c
+targets_queue	WebThread.h	/^    MonitorCola& targets_queue;$/;"	m	class:WebThread
+states	WebThread.h	/^    UrlStates& states;$/;"	m	class:WebThread
+index	WebThread.h	/^    Index& index;$/;"	m	class:WebThread
+analizer	WebThread.h	/^    PageAnalizer analizer;$/;"	m	class:WebThread
+WebThread	WebThread.h	/^    WebThread(MonitorCola& url_to_procces, Index& idx,$/;"	p	class:WebThread
+override	WebThread.h	/^    virtual void run() override;$/;"	m	class:WebThread
+~WebThread	WebThread.h	/^    ~WebThread();$/;"	p	class:WebThread
+WebThread	WebThread.h	/^    WebThread(const WebThread&) = delete;$/;"	p	class:WebThread
+operator =	WebThread.h	/^    WebThread& operator=(const WebThread&) = delete;$/;"	p	class:WebThread
+main	main.cpp	/^int main(int argc, char const *argv[]) {$/;"	f
+WebCrawler	WebCrawler.cpp	/^WebCrawler::WebCrawler(const std::string& idx, const std::string& target,$/;"	f	class:WebCrawler
+ejecutar	WebCrawler.cpp	/^void WebCrawler::ejecutar(){$/;"	f	class:WebCrawler
+~WebCrawler	WebCrawler.cpp	/^WebCrawler::~WebCrawler(){$/;"	f	class:WebCrawler
+target	Makefile	/^target = tp$/;"	m
+target-tsan	Makefile	/^target-tsan = tp-tsan$/;"	m
+extension	Makefile	/^extension = cpp$/;"	m
+math	Makefile	/^math = si$/;"	m
+threads	Makefile	/^threads = si$/;"	m
+verbose	Makefile	/^verbose = si$/;"	m
+CSTD	Makefile	/^CSTD = c11$/;"	m
+CXXSTD	Makefile	/^CXXSTD = c++11$/;"	m
+LD	Makefile	/^LD = $(CC)$/;"	m
+COMPILER	Makefile	/^COMPILER = $(CC)$/;"	m
+COMPILERFLAGS	Makefile	/^COMPILERFLAGS = $(CFLAGS)$/;"	m
+LD	Makefile	/^LD = $(CXX)$/;"	m
+COMPILER	Makefile	/^COMPILER = $(CXX)$/;"	m
+COMPILERFLAGS	Makefile	/^COMPILERFLAGS = $(CXXFLAGS)$/;"	m
+fuentes	Makefile	/^fuentes ?= $(wildcard *.$(extension))$/;"	m
+directorios	Makefile	/^directorios = $(shell find . -type d -regex '.*\\w+')$/;"	m
+occ	Makefile	/^occ := $(CC)$/;"	m
+ocxx	Makefile	/^ocxx := $(CXX)$/;"	m
+orm	Makefile	/^orm := $(RM)$/;"	m
+old	Makefile	/^old := $(LD)$/;"	m
+RM	Makefile	/^RM := $(RM) -v$/;"	m
+CC	Makefile	/^CC =  @echo "  CC  $@"; $(occ)$/;"	m
+CXX	Makefile	/^CXX = @echo "  CXX $@"; $(ocxx)$/;"	m
+RM	Makefile	/^RM =  @echo "  CLEAN"; $(orm)$/;"	m
+LD	Makefile	/^LD =  @echo "  LD  $@"; $(old)$/;"	m
+LDFLAGS-TSAN	Makefile	/^LDFLAGS-TSAN = $(LDFLAGS) -fsanitize=thread$/;"	m
+COMPILERFLAGS-TSAN	Makefile	/^COMPILERFLAGS-TSAN = $(COMPILERFLAGS) -fsanitize=thread$/;"	m
+o_files	Makefile	/^o_files = $(patsubst %.$(extension),%.o,$(fuentes))$/;"	m
+o-tsan_files	Makefile	/^o-tsan_files = $(patsubst %.$(extension),%.o-tsan,$(fuentes))$/;"	m
