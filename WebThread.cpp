@@ -11,9 +11,8 @@ WebThread::WebThread(MonitorCola& url_to_procces, Index& idx,
 
 void WebThread::run(){
   while (!targets_queue.empty() && !targets_queue.is_closed()){
-    //Ver si sacar el empty
     std::string url = targets_queue.pop();
-    //Busca size y offset
+
     int offset, size;
     int valid = index.get_values(url, offset, size);
     if (valid == VALID){

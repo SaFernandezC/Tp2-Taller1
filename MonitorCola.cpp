@@ -23,7 +23,7 @@ std::string MonitorCola::pop() {
 
   while (targets_queue.empty()) {
     if (closed == true){
-      return NULL; //ACA IRIA UNA EXCEPCION?
+      return NULL;
     }
     is_empty.wait(lock);
   }

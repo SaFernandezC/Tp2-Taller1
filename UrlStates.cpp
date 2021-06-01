@@ -18,7 +18,4 @@ void UrlStates::print_urls(){
   }
 }
 
-
-
-
 UrlStates::~UrlStates(){}

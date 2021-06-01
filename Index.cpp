@@ -9,7 +9,7 @@
 Index::Index(const std::string& file_name){
   std::ifstream index_file(file_name.c_str());
   if (index_file.fail()) {
-    return; //TRATAR EXCEPCION
+    return;
   }
 
   std::string url;

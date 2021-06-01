@@ -3,10 +3,10 @@
 #include <string>
 #include "WebCrawler.h"
 
-// using namespace std;
+#define VALID_ARGC 7
 
 int main(int argc, char const *argv[]) {
-  if (argc != 7) {
+  if (argc != VALID_ARGC) {
 		std::cout << "Cantidad incorrecta de parametros" << std::endl;
 		return 0;
 	}

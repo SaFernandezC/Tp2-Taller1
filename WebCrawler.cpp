@@ -30,7 +30,6 @@ void WebCrawler::ejecutar(){
   states.print_urls();
 }
 
-
 WebCrawler::~WebCrawler(){
   for (int i = 0; i < cant_threads; ++i) {
     delete web_threads[i];

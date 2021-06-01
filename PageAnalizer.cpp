@@ -11,9 +11,9 @@ PageAnalizer::PageAnalizer(const std::string& file_name,
   const std::string& allowed):allowed_dom(allowed){
     pages_file.open(file_name, std::ifstream::in);
     if (pages_file.fail()) {
-      return; //TRATAR EXCEPCION
+      return;
     }
-  }
+}
 
 void PageAnalizer::analize(MonitorCola& targets_queue, int offset, int size){
   pages_file.seekg(offset, pages_file.beg);
