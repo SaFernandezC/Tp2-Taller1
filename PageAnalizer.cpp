@@ -1,4 +1,5 @@
 #include <string>
+#include <utility>
 #include "PageAnalizer.h"
 
 #define ERROR -1
@@ -32,7 +33,7 @@ PageAnalizer::PageAnalizer(PageAnalizer&& other){
   this->allowed_dom = std::move(other.allowed_dom);
 }
 
-PageAnalizer::PageAnalizer& operator=(PageAnalizer&& other){
+PageAnalizer& PageAnalizer::operator=(PageAnalizer&& other){
   this->pages_file = std::move(other.pages_file);
   this->allowed_dom = std::move(other.allowed_dom);
   return *this;
